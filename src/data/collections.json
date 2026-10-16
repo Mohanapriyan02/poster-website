@@ -1,0 +1,56 @@
+[
+  {
+    "id": "col-anime-edit",
+    "name": "The Anime Edit",
+    "slug": "the-anime-edit",
+    "tagline": "Nostalgic horizons and futuristic cyber-noir aesthetics.",
+    "description": "Hand-curated art prints capturing the quiet poetic beauty of Japanese animation, retro neon cityscapes, and beloved anime masterpieces reimagined as museum-quality gallery art.",
+    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80",
+    "featuredProductSlugs": ["neo-tokyo-cyberpunk-horizon", "shibuya-night-rain-neon", "ghibli-summer-cloud-meadow"]
+  },
+  {
+    "id": "col-cinema",
+    "name": "Cinema on Your Walls",
+    "slug": "cinema-on-your-walls",
+    "tagline": "Auteur tributes, legendary frames, and timeless cinema typography.",
+    "description": "For those who live and breathe film. Dramatic lighting, memorable silhouettes, and minimalist editorial interpretations of world-renowned motion pictures.",
+    "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80",
+    "featuredProductSlugs": ["interstellar-gargantua-minimal", "blade-runner-2049-sunset", "pulp-fiction-minimal-type"]
+  },
+  {
+    "id": "col-gaming",
+    "name": "The Gaming Collection",
+    "slug": "the-gaming-collection",
+    "tagline": "Epic landscapes and pixel heritage elevated into fine art.",
+    "description": "Transform your gaming room or creative workspace with tasteful, mature video game artwork that honours world-building, mystery, and legendary digital adventures.",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80",
+    "featuredProductSlugs": ["elden-erdtree-golden-sanctuary", "night-city-cyberpunk-aerial", "arcade-1984-retro-synth"]
+  },
+  {
+    "id": "col-automotive",
+    "name": "Automotive Culture",
+    "slug": "automotive-culture",
+    "tagline": "Sculpted speed, racing pedigree, and timeless motorsport design.",
+    "description": "Iconic silhouettes from Le Mans to Monte Carlo. Engineering precision and motorsport heritage immortalised through rich, tactile pigment prints.",
+    "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+    "featuredProductSlugs": ["vintage-monaco-grand-prix-1967", "porsche-911-singer-silhouette", "ferrari-f40-speed-blueprint"]
+  },
+  {
+    "id": "col-minimalist",
+    "name": "Minimalist Living",
+    "slug": "minimalist-living",
+    "tagline": "Organic geometry, calming neutrals, and architectural harmony.",
+    "description": "Designed to bring serene balance and thoughtful composition to contemporary apartments, living spaces, and modern Scandinavian interiors.",
+    "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=80",
+    "featuredProductSlugs": ["bauhaus-geometric-exhibition-1923", "terracotta-arch-abstract-forms", "wabi-sabi-neutral-botanical"]
+  },
+  {
+    "id": "col-collector",
+    "name": "The Collector's Wall",
+    "slug": "the-collectors-wall",
+    "tagline": "Statement pieces curated for gallery wall arrangements.",
+    "description": "Larger-than-life formats, limited archival papers, and signature prints created to anchor any discerning art collector's personal gallery wall.",
+    "image": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=1200&q=80",
+    "featuredProductSlugs": ["swiss-international-typography-poster", "dolomites-alpine-peak-in-mist", "dolce-far-niente-serif-quote"]
+  }
+]

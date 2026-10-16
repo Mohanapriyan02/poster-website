@@ -1,0 +1,1277 @@
+[
+  {
+    "id": "POSTER-001",
+    "slug": "neo-tokyo-cyberpunk-horizon",
+    "name": "Neo Tokyo: Cyberpunk Horizon",
+    "tagline": "Neon-soaked verticality and rain-slicked asphalt.",
+    "description": "A breathtaking artistic homage to cyberpunk anime aesthetics. Towering skyscrapers pierce perpetual holographic mist while quiet alleyways tell stories of nocturnal wanderers. Printed on heavy 300 GSM cotton rag with deep, lightfast Japanese pigment inks.",
+    "category": "Anime & Manga",
+    "categorySlug": "anime-manga",
+    "collection": "The Anime Edit",
+    "collectionSlug": "the-anime-edit",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "cyberpunk",
+      "anime",
+      "neon",
+      "tokyo",
+      "cityscape"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Cotton Rag, 12-colour Giclee pigment print",
+    "finish": "Velvety ultra-matte finish with anti-reflective coating",
+    "artistNote": "Inspired by the visual poetry of late 80s hand-drawn animation backgrounds."
+  },
+  {
+    "id": "POSTER-002",
+    "slug": "shibuya-night-rain-neon",
+    "name": "Shibuya: Nocturne in Rain",
+    "tagline": "Atmospheric reflections and quiet urban solitude.",
+    "description": "An evocative study of rain, glowing kanji signs, and cinematic shadows across Tokyo's crossing. Every droplet captures ambient streetlight, creating an intimate, nostalgic presence in any modern room.",
+    "category": "Anime & Manga",
+    "categorySlug": "anime-manga",
+    "collection": "The Anime Edit",
+    "collectionSlug": "the-anime-edit",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": true,
+    "isBestseller": false,
+    "orientation": "portrait",
+    "tags": [
+      "shibuya",
+      "rain",
+      "japan",
+      "moody",
+      "neon"
+    ],
+    "available": true,
+    "materials": "310 GSM Fine Art Cotton Textured Rag",
+    "finish": "Deep velvety matte with zero glare",
+    "artistNote": "Shot on high-sensitivity 35mm film during a midnight monsoon."
+  },
+  {
+    "id": "POSTER-003",
+    "slug": "ghibli-summer-cloud-meadow",
+    "name": "Summer Wind: Meadow Cumulus",
+    "tagline": "Rolling grassy hills beneath towering majestic clouds.",
+    "description": "Capturing the serene warmth of nostalgic summer afternoons. Soft wind ripples across emerald grass while monumental cloud formations drift through an azure sky, evoking childhood wonder and peaceful calm.",
+    "category": "Anime & Manga",
+    "categorySlug": "anime-manga",
+    "collection": "The Anime Edit",
+    "collectionSlug": "the-anime-edit",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "landscape",
+    "tags": [
+      "ghibli",
+      "summer",
+      "clouds",
+      "meadow",
+      "pastoral"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Cotton Rag",
+    "finish": "Smooth matte fine art print",
+    "artistNote": "A tribute to classical hand-painted cel animation landscapes."
+  },
+  {
+    "id": "POSTER-004",
+    "slug": "interstellar-gargantua-minimal",
+    "name": "Gargantua: Event Horizon Minimal",
+    "tagline": "The majesty of relativistic space and timeless wanderlust.",
+    "description": "An elegant minimalist study of gravitational lensing and celestial luminescence. Featuring precise orbital geometry and understated cinematic typography that whispers the endurance of love across spacetime.",
+    "category": "Movies & Cinema",
+    "categorySlug": "movies-cinema",
+    "collection": "Cinema on Your Walls",
+    "collectionSlug": "cinema-on-your-walls",
+    "price": {
+      "A4": 549,
+      "A3": 849,
+      "A2": 1399,
+      "A1": 2199
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "interstellar",
+      "space",
+      "cinema",
+      "sci-fi",
+      "minimal"
+    ],
+    "available": true,
+    "materials": "310 GSM Museum Cotton Archival Rag",
+    "finish": "Ultra-deep carbon blacks with zero surface sheen",
+    "artistNote": "Rendered using real relativistic accretion disc equations."
+  },
+  {
+    "id": "POSTER-005",
+    "slug": "blade-runner-2049-sunset",
+    "name": "Tears in Rain: Las Vegas Mirage",
+    "tagline": "Amber dust horizons and colossal monument silhouettes.",
+    "description": "The devastating visual poetry of Roger Deakins' palette captured in a single frame. Monolithic statues rise out of radioactive amber haze as a lonely figure steps into memory and mystery.",
+    "category": "Movies & Cinema",
+    "categorySlug": "movies-cinema",
+    "collection": "Cinema on Your Walls",
+    "collectionSlug": "cinema-on-your-walls",
+    "price": {
+      "A4": 549,
+      "A3": 849,
+      "A2": 1399,
+      "A1": 2199
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": true,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "bladerunner",
+      "cinema",
+      "cyberpunk",
+      "amber",
+      "silhouette"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Velvet Paper",
+    "finish": "Warm matte texture with rich burnt ochre saturation",
+    "artistNote": "Original photographic study echoing Villeneuve's monumental scale."
+  },
+  {
+    "id": "POSTER-006",
+    "slug": "pulp-fiction-minimal-type",
+    "name": "Vincent & Jules: 1994 Swiss Monograph",
+    "tagline": "Cult dialogue, timeless posture, and Swiss typographic restraint.",
+    "description": "An understated modern editorial print celebrating Quentin Tarantino's watershed masterpiece. Crisp dual silhouettes anchored by balanced Helvetica grid typography and an iconic quote from the diner finale.",
+    "category": "Movies & Cinema",
+    "categorySlug": "movies-cinema",
+    "collection": "Cinema on Your Walls",
+    "collectionSlug": "cinema-on-your-walls",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": false,
+    "orientation": "portrait",
+    "tags": [
+      "cinema",
+      "typography",
+      "cult",
+      "swiss",
+      "monochrome"
+    ],
+    "available": true,
+    "materials": "300 GSM Heavyweight Archival Cotton Rag",
+    "finish": "Razor-sharp black typographic density on warm ivory",
+    "artistNote": "Designed according to the strict Josef Muller-Brockmann grid system."
+  },
+  {
+    "id": "POSTER-007",
+    "slug": "elden-erdtree-golden-sanctuary",
+    "name": "The Golden Erdtree: Sanctuary of Grace",
+    "tagline": "Luminous golden foliage rising above the shattered Lands Between.",
+    "description": "An awe-inspiring fantasy landscape capturing the monumental majesty of the Great Erdtree. Golden spectral light cascades across foggy crags and ruined gothic spires, bringing calm yet epic grandeur to any gaming or living space.",
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "collection": "The Gaming Collection",
+    "collectionSlug": "the-gaming-collection",
+    "price": {
+      "A4": 549,
+      "A3": 849,
+      "A2": 1399,
+      "A1": 2199
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "gaming",
+      "fantasy",
+      "erdtree",
+      "gold",
+      "atmospheric"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Textured Watercolor Rag",
+    "finish": "Matte surface with glowing pigment illumination",
+    "artistNote": "Hand-blended digital painting celebrating dark fantasy landscape design."
+  },
+  {
+    "id": "POSTER-008",
+    "slug": "night-city-cyberpunk-aerial",
+    "name": "Night City: High Altitude Cyber-Grid",
+    "tagline": "Corporate monoliths soaring above neon-lit alleys.",
+    "description": "An aerial twilight perspective of the world's most dangerous metropolis. Flying aerodynes streak golden vapor across glass facades while neon kanji shines through the low-hanging sea fog.",
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "collection": "The Gaming Collection",
+    "collectionSlug": "the-gaming-collection",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": true,
+    "isBestseller": false,
+    "orientation": "portrait",
+    "tags": [
+      "gaming",
+      "cyberpunk",
+      "nightcity",
+      "architecture",
+      "future"
+    ],
+    "available": true,
+    "materials": "310 GSM Cotton Rag Fine Art Paper",
+    "finish": "Fine art matte with rich contrast and clean edges",
+    "artistNote": "Crafted for enthusiasts seeking sophisticated video game decor."
+  },
+  {
+    "id": "POSTER-009",
+    "slug": "vintage-monaco-grand-prix-1967",
+    "name": "Monaco Grand Prix: 1967 Riviera Edition",
+    "tagline": "The golden age of Mediterranean speed and racing courage.",
+    "description": "An authentic vintage-inspired motorsport poster celebrating the legendary harbour circuit of Monte Carlo. Cigar-chassis racers power through the hairpin against azure Mediterranean waters and terracotta villas.",
+    "category": "Cars & Motorsports",
+    "categorySlug": "cars-motorsports",
+    "collection": "Automotive Culture",
+    "collectionSlug": "automotive-culture",
+    "price": {
+      "A4": 549,
+      "A3": 849,
+      "A2": 1399,
+      "A1": 2199
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "f1",
+      "motorsport",
+      "monaco",
+      "vintage",
+      "racing"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Warm-White Cotton Rag",
+    "finish": "Subtle tactile grain reminiscent of period lithography",
+    "artistNote": "Typeset in period-accurate French art deco and neo-grotesque numerals."
+  },
+  {
+    "id": "POSTER-010",
+    "slug": "porsche-911-singer-silhouette",
+    "name": "Stuttgart Heritage: The 911 Silhouette",
+    "tagline": "Unmistakable rear-engine curvature and understated German poise.",
+    "description": "Pure automotive perfection distilled into essential curves. The unmistakable roofline of the air-cooled classic 911, captured in minimalist chiaroscuro lighting on an archival off-white exhibition canvas.",
+    "category": "Cars & Motorsports",
+    "categorySlug": "cars-motorsports",
+    "collection": "Automotive Culture",
+    "collectionSlug": "automotive-culture",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "porsche",
+      "911",
+      "minimalist",
+      "automotive",
+      "german"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Cotton Smooth Rag",
+    "finish": "Silky matte with deep shadow delineation",
+    "artistNote": "For collectors who appreciate clean automotive engineering over loud graphics."
+  },
+  {
+    "id": "POSTER-011",
+    "slug": "bauhaus-geometric-exhibition-1923",
+    "name": "Bauhaus Weimar: 1923 Form & Function",
+    "tagline": "Asymmetrical harmony, circular geometry, and constructivist restraint.",
+    "description": "An authentic reissue honoring Walter Gropius and the pioneers of modernism. Featuring interlocking geometric circles, balance points, and historical typography commemorating the historic Weimar exhibition.",
+    "category": "Minimalist Art",
+    "categorySlug": "minimalist-art",
+    "collection": "Minimalist Living",
+    "collectionSlug": "minimalist-living",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "bauhaus",
+      "minimalist",
+      "geometric",
+      "modernism",
+      "abstract"
+    ],
+    "available": true,
+    "materials": "300 GSM Museum Natural Warm Rag",
+    "finish": "Organic warm ivory base paper with deep terracotta and cobalt inks",
+    "artistNote": "Digitally remastered from original 1923 archives in Dessau."
+  },
+  {
+    "id": "POSTER-012",
+    "slug": "terracotta-arch-abstract-forms",
+    "name": "Mid-Century Arch: Terracotta Balance",
+    "tagline": "Earthy warmth, organic curves, and Mediterranean wabi-sabi.",
+    "description": "Soothing architectural arches paired with abstract stone spheres and warm ochre brush strokes. Creates an instant calming presence in living rooms, reading corners, and tranquil bed chambers.",
+    "category": "Minimalist Art",
+    "categorySlug": "minimalist-art",
+    "collection": "Minimalist Living",
+    "collectionSlug": "minimalist-living",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": true,
+    "isBestseller": false,
+    "orientation": "portrait",
+    "tags": [
+      "terracotta",
+      "minimal",
+      "arch",
+      "neutral",
+      "earthy"
+    ],
+    "available": true,
+    "materials": "300 GSM Textured French Cold-Press Rag",
+    "finish": "Velvety mineral matte with tactile paper grain",
+    "artistNote": "Hand-mixed pigments inspired by Tuscan clay and stone mortar."
+  },
+  {
+    "id": "POSTER-013",
+    "slug": "dolomites-alpine-peak-in-mist",
+    "name": "Alpe di Siusi: Dolomites Dawn Mist",
+    "tagline": "Dramatic limestone pinnacles rising through sea of morning fog.",
+    "description": "An awe-inspiring medium-format landscape study of Italy's majestic Dolomites. A solitary wooden alpine barn rests on dew-laden rolling meadows while jagged jagged peaks break through clouds touched by morning light.",
+    "category": "Nature & Photography",
+    "categorySlug": "nature-photography",
+    "collection": "The Collector's Wall",
+    "collectionSlug": "the-collectors-wall",
+    "price": {
+      "A4": 549,
+      "A3": 849,
+      "A2": 1399,
+      "A1": 2199
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "landscape",
+    "tags": [
+      "mountains",
+      "dolomites",
+      "nature",
+      "alpine",
+      "mist"
+    ],
+    "available": true,
+    "materials": "310 GSM Hahnemuhle Museum Archival Rag",
+    "finish": "Exquisite tonal micro-contrast with lifetime lightfastness",
+    "artistNote": "Photographed on a Hasselblad medium-format body at 5:40 AM."
+  },
+  {
+    "id": "POSTER-014",
+    "slug": "nordic-pine-fog-sanctuary",
+    "name": "Nordic Silence: The Pine Canopy",
+    "tagline": "Serene atmospheric depth and timeless evergreen calm.",
+    "description": "Layers of shadowy pine treetops fading into endless Scandinavian mist. Deep forest greens and silver fog create an acoustic sense of quiet, transforming any room into an unhurried sanctuary.",
+    "category": "Nature & Photography",
+    "categorySlug": "nature-photography",
+    "collection": "Minimalist Living",
+    "collectionSlug": "minimalist-living",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "forest",
+      "nordic",
+      "fog",
+      "pine",
+      "greenery"
+    ],
+    "available": true,
+    "materials": "300 GSM Heavyweight Archival Cotton Rag",
+    "finish": "Deep mineral forest greens with soft velvety surface",
+    "artistNote": "Captured in the ancient boreal forests of central Sweden."
+  },
+  {
+    "id": "POSTER-015",
+    "slug": "jazz-nocturne-blue-note-vibes",
+    "name": "Midnight Session: Blue Note Chiaroscuro",
+    "tagline": "Brass patina, smoky spotlight, and immortal bebop rhythm.",
+    "description": "An evocative tribute to mid-century jazz record sleeves. A trumpet bell catches warm incandescent spotlight against deep midnight indigo, recalling smoky 52nd Street cellars and late-night Miles Davis harmonies.",
+    "category": "Music & Artists",
+    "categorySlug": "music-artists",
+    "collection": "The Collector's Wall",
+    "collectionSlug": "the-collectors-wall",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "square",
+    "tags": [
+      "jazz",
+      "music",
+      "vinyl",
+      "brass",
+      "monochrome"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Textured Matte Rag",
+    "finish": "Deep rich indanthrone blue and warm gold inks",
+    "artistNote": "Inspired by Reid Miles' legendary graphic designs for Blue Note."
+  },
+  {
+    "id": "POSTER-016",
+    "slug": "daft-punk-discovery-helmets",
+    "name": "Electroma: Golden Duo Tribute",
+    "tagline": "Chrome and gold reflections of electronic music royalty.",
+    "description": "A sleek, refined artistic tribute to French electronic innovators Guy-Manuel and Thomas Bangalter. Chrome and gold helmets rendered in exquisite studio reflection against museum charcoal.",
+    "category": "Music & Artists",
+    "categorySlug": "music-artists",
+    "collection": "The Collector's Wall",
+    "collectionSlug": "the-collectors-wall",
+    "price": {
+      "A4": 549,
+      "A3": 849,
+      "A2": 1399,
+      "A1": 2199
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": true,
+    "isBestseller": false,
+    "orientation": "portrait",
+    "tags": [
+      "music",
+      "electronic",
+      "daftpunk",
+      "gold",
+      "studio"
+    ],
+    "available": true,
+    "materials": "310 GSM Heavyweight Gallery Cotton",
+    "finish": "Smooth matte with true high-density blacks",
+    "artistNote": "Original 3D studio lighting study honoring electronic music pioneers."
+  },
+  {
+    "id": "POSTER-017",
+    "slug": "chicago-1988-the-dunk-monochrome",
+    "name": "Flight 1988: Free Throw Line Flight",
+    "tagline": "Defying gravity suspended mid-air above Chicago stadium.",
+    "description": "The definitive athletic silhouette of sports history. Michael Jordan airborne from the free-throw line, legs spread in legendary poise against a quiet stadium haze. Stripped to raw monochrome drama on premium archival rag.",
+    "category": "Sports",
+    "categorySlug": "sports",
+    "collection": "The Collector's Wall",
+    "collectionSlug": "the-collectors-wall",
+    "price": {
+      "A4": 549,
+      "A3": 849,
+      "A2": 1399,
+      "A1": 2199
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "basketball",
+      "sports",
+      "jordan",
+      "chicago",
+      "monochrome"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Warm Cotton Rag",
+    "finish": "Deep neutral black ink gradient with silver highlights",
+    "artistNote": "Remastered high-resolution silhouette study of athletic elegance."
+  },
+  {
+    "id": "POSTER-018",
+    "slug": "swiss-international-typography-poster",
+    "name": "Zurich 1957: International Typographic Order",
+    "tagline": "Purity of grid, proportional geometry, and clarity of message.",
+    "description": "A museum-level tribute to the Swiss International Typographic Style founded by Max Bill, Josef Muller-Brockmann, and Armin Hofmann. Mathematical rhythm and striking crimson accents on a warm ivory substrate.",
+    "category": "Quotes & Typography",
+    "categorySlug": "quotes-typography",
+    "collection": "The Collector's Wall",
+    "collectionSlug": "the-collectors-wall",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "typography",
+      "swiss",
+      "design",
+      "helvetica",
+      "editorial"
+    ],
+    "available": true,
+    "materials": "300 GSM Heavyweight Archival Cotton Rag",
+    "finish": "Flawless matte finish with razor typographic precision",
+    "artistNote": "Composed according to the classic 12-column Swiss proportional grid."
+  },
+  {
+    "id": "POSTER-019",
+    "slug": "dolce-far-niente-serif-quote",
+    "name": "Dolce Far Niente: The Sweetness of Doing Nothing",
+    "tagline": "Italian philosophy of leisure rendered in exquisite editorial serif.",
+    "description": "A poetic reminder to slow down and savour the passing hours. Hand-tracked Italian serif lettering set on warm Mediterranean eggshell paper, bringing literary grace and effortless warmth to any reading corner.",
+    "category": "Quotes & Typography",
+    "categorySlug": "quotes-typography",
+    "collection": "Minimalist Living",
+    "collectionSlug": "minimalist-living",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": true,
+    "isBestseller": false,
+    "orientation": "portrait",
+    "tags": [
+      "quote",
+      "italian",
+      "serif",
+      "literature",
+      "neutral"
+    ],
+    "available": true,
+    "materials": "300 GSM Heavyweight Archival Cotton Rag",
+    "finish": "Soft-touch tactile eggshell paper",
+    "artistNote": "Typeset in customized revival Caslon Old Style ligatures."
+  },
+  {
+    "id": "POSTER-020",
+    "slug": "matisse-cutout-monstera-terracotta",
+    "name": "Sunlit Botanical: Matisse Cutout Study",
+    "tagline": "Vibrant botanical cutouts bathed in warm southern sun.",
+    "description": "An exuberant celebration of shape, organic contour, and joy. Inspired by Henri Matisse's late gouache decoupage works, pairing lush olive botanicals against warm sun-baked terracotta grounds.",
+    "category": "Aesthetic Room Decor",
+    "categorySlug": "aesthetic-room-decor",
+    "collection": "Minimalist Living",
+    "collectionSlug": "minimalist-living",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "matisse",
+      "botanical",
+      "terracotta",
+      "decor",
+      "cutout"
+    ],
+    "available": true,
+    "materials": "310 GSM Cotton Rag Fine Art Paper",
+    "finish": "Smooth matte with vibrant pure pigment saturation",
+    "artistNote": "Hand-cut paper maquette digitized for archival pigment reproduction."
+  },
+  {
+    "id": "POSTER-021",
+    "slug": "scandinavian-ceramic-shadows",
+    "name": "Nordic Atelier: Vessels in Morning Light",
+    "tagline": "Earthy stoneware ceramics and cast architectural shadows.",
+    "description": "An understated still life showcasing handcrafted Scandinavian pottery catching low Nordic morning sun. Quiet, balanced, and harmonising effortlessly with light wood furniture and linen fabrics.",
+    "category": "Aesthetic Room Decor",
+    "categorySlug": "aesthetic-room-decor",
+    "collection": "Minimalist Living",
+    "collectionSlug": "minimalist-living",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "square",
+    "tags": [
+      "decor",
+      "ceramics",
+      "scandinavian",
+      "neutral",
+      "interior"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Textured French Rag",
+    "finish": "Tactile matte paper with soft gradient transitions",
+    "artistNote": "Photographed in an artisanal pottery workshop in Copenhagen."
+  },
+  {
+    "id": "POSTER-022",
+    "slug": "cyberpunk-akira-drift-bike",
+    "name": "Neo Tokyo Drift: The Red Machine",
+    "tagline": "Iconic red fairings and neon skid marks through the mega-city.",
+    "description": "The supreme mechanical icon of anime history. Kaneda's high-tech crimson racing motorcycle parked against the damp concrete pillars of the sub-highway, rendered in dark cinematic oil-grain texture.",
+    "category": "Anime & Manga",
+    "categorySlug": "anime-manga",
+    "collection": "The Anime Edit",
+    "collectionSlug": "the-anime-edit",
+    "price": {
+      "A4": 549,
+      "A3": 849,
+      "A2": 1399,
+      "A1": 2199
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": true,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "akira",
+      "anime",
+      "motorcycle",
+      "red",
+      "cyberpunk"
+    ],
+    "available": true,
+    "materials": "310 GSM Museum Cotton Archival Rag",
+    "finish": "Vivid scarlet red pigment with deep velvety shadow depth",
+    "artistNote": "Original painted tribute honoring Katsuhiro Otomo's groundbreaking visual style."
+  },
+  {
+    "id": "POSTER-023",
+    "slug": "ferrari-f40-speed-blueprint",
+    "name": "Maranello Legend: F40 Technical Monograph",
+    "tagline": "Twin-turbo V8 perfection charted in technical elegance.",
+    "description": "The last supercar personally approved by Enzo Ferrari. Clean technical isometric line-art, twin NACA ducts, and rear wing dimensions presented with gallery-grade typographic refinement.",
+    "category": "Cars & Motorsports",
+    "categorySlug": "cars-motorsports",
+    "collection": "Automotive Culture",
+    "collectionSlug": "automotive-culture",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "landscape",
+    "tags": [
+      "ferrari",
+      "f40",
+      "supercar",
+      "blueprint",
+      "automotive"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Cotton Rag",
+    "finish": "Fine architectural drafting lines on warm ivory archival paper",
+    "artistNote": "Digitally drafted from original 1987 Maranello technical schematics."
+  },
+  {
+    "id": "POSTER-024",
+    "slug": "kyoto-arashiyama-bamboo-path",
+    "name": "Arashiyama: The Green Path to Stillness",
+    "tagline": "Towering green bamboo stalks filtering soft ambient mist.",
+    "description": "The whispering stillness of Kyoto's sacred grove. Soaring vertical bamboo stalks create natural temple pillars, filtering ethereal morning light that guides the eye towards calm contemplation.",
+    "category": "Nature & Photography",
+    "categorySlug": "nature-photography",
+    "collection": "Minimalist Living",
+    "collectionSlug": "minimalist-living",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": true,
+    "orientation": "portrait",
+    "tags": [
+      "kyoto",
+      "japan",
+      "bamboo",
+      "nature",
+      "zen"
+    ],
+    "available": true,
+    "materials": "300 GSM Heavyweight Archival Cotton Rag",
+    "finish": "Subtle Japanese washi texture with natural vegetable pigment",
+    "artistNote": "Photographed during first light before visitor entry."
+  },
+  {
+    "id": "POSTER-025",
+    "slug": "cinema-paradiso-warm-nostalgia",
+    "name": "Nuovo Cinema: Projection Beam Magic",
+    "tagline": "A tribute to the golden flickering projector of small-town dreams.",
+    "description": "Dust motes dance through a golden beam of 35mm celluloid light inside a vintage Mediterranean cinema hall. An emotional visual ode to the romance of cinema and human connection.",
+    "category": "Movies & Cinema",
+    "categorySlug": "movies-cinema",
+    "collection": "Cinema on Your Walls",
+    "collectionSlug": "cinema-on-your-walls",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": true,
+    "isBestseller": false,
+    "orientation": "portrait",
+    "tags": [
+      "cinema",
+      "film",
+      "nostalgia",
+      "vintage",
+      "sepia"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Warm Cotton Rag",
+    "finish": "Warm sepia tones with fine silver halide grain effect",
+    "artistNote": "Inspired by Giuseppe Tornatore's timeless celebration of film."
+  },
+  {
+    "id": "POSTER-026",
+    "slug": "wimbledon-centre-court-poetry",
+    "name": "Centre Court: The Grass Geometry",
+    "tagline": "Pristine white chalk lines upon historic manicured rye grass.",
+    "description": "An understated graphic composition honoring the cathedral of lawn tennis. Crisp white boundary lines intersect pristine emerald grass, capturing the dignified quiet before the first championship serve.",
+    "category": "Sports",
+    "categorySlug": "sports",
+    "collection": "The Collector's Wall",
+    "collectionSlug": "the-collectors-wall",
+    "price": {
+      "A4": 499,
+      "A3": 799,
+      "A2": 1299,
+      "A1": 1999
+    },
+    "sizes": [
+      "A4",
+      "A3",
+      "A2",
+      "A1"
+    ],
+    "image": "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1000&q=85",
+    "secondaryImage": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+    "mockupImages": {
+      "livingRoom": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85",
+      "bedroom": "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1000&q=85",
+      "studio": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=85"
+    },
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1000&q=85",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+    ],
+    "featured": false,
+    "isNew": false,
+    "isBestseller": false,
+    "orientation": "portrait",
+    "tags": [
+      "tennis",
+      "sports",
+      "wimbledon",
+      "grass",
+      "minimal"
+    ],
+    "available": true,
+    "materials": "300 GSM Archival Textured Matte Rag",
+    "finish": "Vibrant lawn green with chalk-textured pure whites",
+    "artistNote": "Architectural line study of SW19 Centre Court dimensions."
+  }
+]

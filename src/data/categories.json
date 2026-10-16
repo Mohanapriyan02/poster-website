@@ -1,0 +1,92 @@
+[
+  {
+    "id": "cat-anime",
+    "name": "Anime & Manga",
+    "slug": "anime-manga",
+    "description": "Evocative cinematic scenes, cyberpunk metropolises, and nostalgic Japanese animation aesthetic.",
+    "image": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80",
+    "accent": "#C44536",
+    "posterCount": 6
+  },
+  {
+    "id": "cat-movies",
+    "name": "Movies & Cinema",
+    "slug": "movies-cinema",
+    "description": "Iconic auteur cinematography, cult-classic typography, and minimalist cinema tributes.",
+    "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
+    "accent": "#772F1A",
+    "posterCount": 5
+  },
+  {
+    "id": "cat-gaming",
+    "name": "Gaming",
+    "slug": "gaming",
+    "description": "Atmospheric virtual worlds, moody synth landscapes, and high-fidelity video game lore.",
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80",
+    "accent": "#4D5382",
+    "posterCount": 4
+  },
+  {
+    "id": "cat-cars",
+    "name": "Cars & Motorsports",
+    "slug": "cars-motorsports",
+    "description": "Golden era racing heritage, classic Gran Turismo lines, and mechanical engineering art.",
+    "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+    "accent": "#2B4162",
+    "posterCount": 4
+  },
+  {
+    "id": "cat-music",
+    "name": "Music & Artists",
+    "slug": "music-artists",
+    "description": "Vinyl grooves, legendary jazz moods, French touch electronic art, and acoustic soul.",
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
+    "accent": "#7D4E57",
+    "posterCount": 4
+  },
+  {
+    "id": "cat-sports",
+    "name": "Sports",
+    "slug": "sports",
+    "description": "Timeless athletic moments, court poetry, majestic stadium geometry, and peak human spirit.",
+    "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80",
+    "accent": "#386641",
+    "posterCount": 3
+  },
+  {
+    "id": "cat-minimalist",
+    "name": "Minimalist Art",
+    "slug": "minimalist-art",
+    "description": "Bauhaus balance, abstract architectural arches, neutral organic silhouettes, and warm wabi-sabi.",
+    "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
+    "accent": "#8D6B4F",
+    "posterCount": 5
+  },
+  {
+    "id": "cat-nature",
+    "name": "Nature & Photography",
+    "slug": "nature-photography",
+    "description": "Misty Alpine heights, Pacific coastal foam, Nordic pine silence, and dramatic earth landscapes.",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    "accent": "#4A5859",
+    "posterCount": 4
+  },
+  {
+    "id": "cat-quotes",
+    "name": "Quotes & Typography",
+    "slug": "quotes-typography",
+    "description": "Swiss international typography, timeless literary meditations, and refined editorial phrasing.",
+    "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80",
+    "accent": "#333333",
+    "posterCount": 4
+  },
+  {
+    "id": "cat-decor",
+    "name": "Aesthetic Room Decor",
+    "slug": "aesthetic-room-decor",
+    "description": "Sun-drenched botanical shadows, gallery wall sets, Mediterranean ceramics, and warm modernism.",
+    "image": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80",
+    "accent": "#BC6C25",
+    "posterCount": 5
+  }
+]
