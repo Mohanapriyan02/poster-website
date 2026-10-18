@@ -4,7 +4,10 @@ import multer from 'multer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { exec } from 'child_process';
+import { promisify } from 'util';
 
+const execAsync = promisify(exec);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
@@ -486,6 +489,34 @@ app.post('/api/restore', (req, res) => {
   } catch (err) {
     console.error('Restore error:', err);
     res.status(500).json({ error: 'Failed to restore backup.' });
+  }
+});
+
+// POST /api/git/push - 1-Click Sync to GitHub Repository
+app.post('/api/git/push', async (req, res) => {
+  try {
+    // Stage modified catalogue data and images
+    await execAsync('git add src/data/ public/images/', { cwd: ROOT_DIR });
+    
+    // Check if there are uncommitted changes
+    try {
+      await execAsync('git commit -m "chore(catalogue): sync updates from Admin Console"', { cwd: ROOT_DIR });
+    } catch (commitErr) {
+      // Nothing to commit is fine
+    }
+
+    // Push to GitHub origin main
+    await execAsync('git push origin main', { cwd: ROOT_DIR });
+
+    res.json({
+      success: true,
+      message: 'Catalogue changes pushed to GitHub! The live website is rebuilding and updating on GitHub Pages.',
+      repoUrl: 'https://github.com/Mohanapriyan02/poster-website',
+      liveUrl: 'https://mohanapriyan02.github.io/poster-website/'
+    });
+  } catch (err) {
+    console.error('Git push error:', err);
+    res.status(500).json({ error: err.message || 'Failed to push changes to GitHub.' });
   }
 });
 

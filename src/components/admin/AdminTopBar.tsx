@@ -1,7 +1,8 @@
-import React from 'react';
-import { Menu, Plus, RefreshCw, ExternalLink, ShieldCheck, AlertCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Menu, Plus, RefreshCw, ExternalLink, ShieldCheck, AlertCircle, CloudUpload, CheckCircle, Loader2 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCatalog } from '../../context/CatalogContext';
+import { syncToGitHub } from '../../services/api';
 
 interface AdminTopBarProps {
   onToggleMobile: () => void;
@@ -10,6 +11,22 @@ interface AdminTopBarProps {
 export const AdminTopBar: React.FC<AdminTopBarProps> = ({ onToggleMobile }) => {
   const { isBackendOnline, refreshCatalog, loading } = useCatalog();
   const location = useLocation();
+  const [syncing, setSyncing] = useState(false);
+  const [syncMessage, setSyncMessage] = useState<string | null>(null);
+
+  const handleSyncToGitHub = async () => {
+    setSyncing(true);
+    setSyncMessage(null);
+    try {
+      const res = await syncToGitHub();
+      setSyncMessage(res.message);
+      setTimeout(() => setSyncMessage(null), 5000);
+    } catch (err: any) {
+      alert(err.message || 'Failed to sync with GitHub.');
+    } finally {
+      setSyncing(false);
+    }
+  };
 
   const getPageTitle = () => {
     const path = location.pathname;
@@ -86,15 +103,45 @@ export const AdminTopBar: React.FC<AdminTopBarProps> = ({ onToggleMobile }) => {
           <span className="hidden sm:inline">Refresh</span>
         </button>
 
+        {/* Sync with GitHub 1-Click Action */}
+        <button
+          type="button"
+          onClick={handleSyncToGitHub}
+          disabled={syncing || !isBackendOnline}
+          className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs font-semibold px-2.5 sm:px-3 py-1.5 rounded-md shadow-xs transition-colors cursor-pointer"
+          title="Push local catalogue changes directly to GitHub"
+        >
+          {syncing ? (
+            <>
+              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              <span className="hidden sm:inline">Pushing...</span>
+            </>
+          ) : (
+            <>
+              <CloudUpload className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Sync to GitHub</span>
+              <span className="sm:hidden">Push</span>
+            </>
+          )}
+        </button>
+
         {/* Add Poster Quick Action */}
         <Link
           to="/admin/posters/new"
-          className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium px-3 py-1.5 rounded-md shadow-xs transition-colors"
+          className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium px-2.5 sm:px-3 py-1.5 rounded-md shadow-xs transition-colors"
         >
           <Plus className="w-3.5 h-3.5" />
-          <span>Add Poster</span>
+          <span className="hidden sm:inline">Add Poster</span>
         </Link>
       </div>
+
+      {/* Sync Success Floating Toast */}
+      {syncMessage && (
+        <div className="fixed top-14 right-4 z-50 bg-emerald-900 text-emerald-100 border border-emerald-600 px-4 py-2.5 rounded-lg shadow-xl text-xs flex items-center gap-2 max-w-md animate-in fade-in slide-in-from-top-2 duration-200">
+          <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+          <span>{syncMessage}</span>
+        </div>
+      )}
     </header>
   );
 };

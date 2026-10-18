@@ -11,15 +11,21 @@ import {
   ExternalLink,
   ShieldCheck,
   X,
+  Lock,
 } from 'lucide-react';
 import { useCatalog } from '../../context/CatalogContext';
 
 interface AdminSidebarProps {
   mobileOpen: boolean;
   onCloseMobile: () => void;
+  onLockConsole: () => void;
 }
 
-export const AdminSidebar: React.FC<AdminSidebarProps> = ({ mobileOpen, onCloseMobile }) => {
+export const AdminSidebar: React.FC<AdminSidebarProps> = ({
+  mobileOpen,
+  onCloseMobile,
+  onLockConsole,
+}) => {
   const { products, settings, isBackendOnline } = useCatalog();
 
   const draftsCount = products.filter((p) => p.status === 'draft').length;
@@ -124,8 +130,8 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({ mobileOpen, onCloseM
         </p>
       </div>
 
-      {/* View Public Website Link */}
-      <div className="p-3 border-t border-slate-800">
+      {/* View Public Website Link & Lock Console */}
+      <div className="p-3 border-t border-slate-800 space-y-2">
         <Link
           to="/"
           target="_blank"
@@ -135,6 +141,17 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({ mobileOpen, onCloseM
           <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
           <span>View Public Website</span>
         </Link>
+        <button
+          type="button"
+          onClick={() => {
+            onCloseMobile();
+            onLockConsole();
+          }}
+          className="flex items-center justify-center gap-2 w-full py-1.5 px-3 text-xs font-medium rounded-md text-slate-400 hover:text-slate-200 hover:bg-slate-850 transition-colors cursor-pointer"
+        >
+          <Lock className="w-3 h-3 text-slate-400" />
+          <span>Lock Console</span>
+        </button>
       </div>
     </div>
   );

@@ -206,3 +206,14 @@ export async function restoreBackup(backupName: string): Promise<string> {
   if (!res.ok) throw new Error(data.error || 'Restore failed.');
   return data.message;
 }
+
+export async function syncToGitHub(): Promise<{ success: boolean; message: string; liveUrl: string }> {
+  const res = await fetch(`${API_BASE}/git/push`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Failed to sync changes with GitHub.');
+  return data;
+}
+
