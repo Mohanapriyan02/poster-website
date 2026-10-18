@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Breadcrumbs } from "../components/common/Breadcrumbs";
-import { siteConfig } from "../config/site";
+import { useCatalog } from "../context/CatalogContext";
 import { buildGeneralEnquiryUrl, buildCustomPrintEnquiryUrl } from "../utils/whatsapp";
 import { MessageCircle, Mail, MapPin, Clock, HelpCircle, Send } from "lucide-react";
 
 export const ContactPage: React.FC = () => {
+  const { settings } = useCatalog();
   const [customName, setCustomName] = useState("");
   const [customArt, setCustomArt] = useState("");
   const [customSize, setCustomSize] = useState("A3 (11.7 × 16.5 in)");
@@ -12,12 +13,15 @@ export const ContactPage: React.FC = () => {
 
   const handleCustomSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const url = buildCustomPrintEnquiryUrl({
-      name: customName,
-      artType: customArt || "Custom Wall Poster Request",
-      size: customSize,
-      notes: customNotes,
-    });
+    const url = buildCustomPrintEnquiryUrl(
+      {
+        name: customName,
+        artType: customArt || "Custom Wall Poster Request",
+        size: customSize,
+        notes: customNotes,
+      },
+      settings
+    );
     window.open(url, "_blank");
   };
 
@@ -58,7 +62,7 @@ export const ContactPage: React.FC = () => {
               </p>
               
               <a
-                href={buildGeneralEnquiryUrl()}
+                href={buildGeneralEnquiryUrl(undefined, settings)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 w-full flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20BA5A] text-white py-3.5 px-4 text-xs uppercase tracking-widest font-semibold transition-colors"
@@ -68,7 +72,7 @@ export const ContactPage: React.FC = () => {
               </a>
 
               <div className="mt-4 flex items-center justify-between text-[11px] text-[#A89E92] pt-4 border-t border-[#2E2A25]">
-                <span>Number: +{siteConfig.whatsappNumber}</span>
+                <span>Number: +{settings.whatsappNumber}</span>
                 <span className="text-[#25D366]">Online Mon-Sat</span>
               </div>
             </div>
@@ -80,10 +84,10 @@ export const ContactPage: React.FC = () => {
                 <div>
                   <h4 className="text-xs uppercase tracking-wider text-[#8C7D70] font-medium">Email Enquiries</h4>
                   <a
-                    href={`mailto:${siteConfig.contactEmail}`}
+                    href={`mailto:${settings.contactEmail}`}
                     className="text-sm text-[#171717] hover:underline"
                   >
-                    {siteConfig.contactEmail}
+                    {settings.contactEmail}
                   </a>
                 </div>
               </div>
@@ -92,7 +96,7 @@ export const ContactPage: React.FC = () => {
                 <MapPin className="w-4 h-4 text-[#C5A880] mt-0.5" />
                 <div>
                   <h4 className="text-xs uppercase tracking-wider text-[#8C7D70] font-medium">Print Studio</h4>
-                  <p className="text-sm text-[#171717]">{siteConfig.studioLocation}</p>
+                  <p className="text-sm text-[#171717]">{settings.studioLocation}</p>
                 </div>
               </div>
 

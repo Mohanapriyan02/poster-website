@@ -1,206 +1,132 @@
-﻿# LUMINA & ARCHIVE — Premium Wall Poster & Art Print Showcase
+# LUMINA & ARCHIVE — Premium Wall Poster Showcase & Admin CMS
 
-A visually stunning, editorial-grade wall poster showcase website inspired by boutique contemporary art galleries, minimal editorial magazines, and architectural design studios (such as Postman Posters).
+A complete, professional web application designed for a luxury wall poster and art print brand. It provides two distinct interfaces within one modular codebase:
 
-Designed specifically for **poster discovery and direct WhatsApp customer enquiries** without shopping cart or checkout friction. 100% free static deployment compatible with **GitHub Pages**.
-
----
-
-## 🎨 Visual Identity & Design Principles
-
-- **Warm Editorial Palette**: Off-white & warm ivory (`#FAF8F5`, `#F5F2EB`) with deep charcoal typography (`#171717`), warm stone accents (`#8C7D70`), and museum gold highlights (`#C5A880`).
-- **Museum Typography**: Serif headlines (`Cormorant Garamond`) paired with modern clean sans-serif (`Plus Jakarta Sans`).
-- **Interactive Perspectives**: Isolated print preview, living room, bedroom, and creative studio wall mockups.
-- **Framing Simulator**: Interactive preview between *Unframed Fine Art Print*, *Matte Black Solid Wood*, *Natural Oak*, and *White Gallery Frame*.
-- **Zero Checkout Friction**: Direct WhatsApp inquiry generation prefilled with poster name, product ID, selected size, framing preference, and current price.
+1. **Public Showcase Website** (`http://localhost:5173`): An elegant, museum-grade art catalogue designed for collector browsing and direct prefilled WhatsApp enquiries.
+2. **Admin Dashboard Console** (`http://localhost:5173/admin`): A clean, minimal content management console that writes directly to local JSON files on disk (`src/data/`), manages image uploads, controls discounts and sale pricing, edits drafts, and takes automated snapshot backups.
 
 ---
 
-## 🚀 Getting Started
+## ⚡ Quick Start: Running Locally
 
 ### 1. Prerequisites
 - **Node.js** (v20+ recommended)
 - **npm** (v10+)
 
-### 2. Install Dependencies
-```bash
-npm install
-```
-
-### 3. Run Locally in Development
+### 2. Start Both the Backend and Frontend with One Command
 ```bash
 npm run dev
 ```
-Open your browser at `http://localhost:5173`.
 
-### 4. Build for Production
+This single command launches both services concurrently:
+- **Local Express Backend**: strictly bound to `http://127.0.0.1:5001`
+- **Vite React Frontend**: `http://localhost:5173` (with `/api` and `/images/posters` automatically proxied to the local backend)
+
+You can also run them in separate terminals if preferred:
 ```bash
-npm run build
+# Terminal 1: Backend only
+npm run server
+
+# Terminal 2: Frontend only
+npm run client
 ```
-Generates an optimized, minified production build in the `dist/` directory.
 
 ---
 
-## ⚙️ Configuration Guide
+## 🧭 Navigation & URLs
 
-### 1. Change Brand Name & Business WhatsApp Number
-All core brand settings are centralized in a single configuration file:
-👉 `src/config/site.ts`
+| Interface | URL | Description |
+| :--- | :--- | :--- |
+| **Public Showcase** | `http://localhost:5173/` | Editorial customer catalogue with interactive framing & WhatsApp enquiry routing |
+| **Admin Dashboard** | `http://localhost:5173/admin` | Catalogue management overview, statistics, and quick actions |
+| **All Posters** | `http://localhost:5173/admin/posters` | Searchable, filterable catalogue table with inline status toggling |
+| **Add New Poster** | `http://localhost:5173/admin/posters/new` | Full creation form with image uploader and discount calculator |
+| **Drafts Workspace** | `http://localhost:5173/admin/drafts` | Inspect and publish draft posters (hidden from public visitors) |
+| **Categories** | `http://localhost:5173/admin/categories` | Manage genres with assigned poster count and safe deletion guards |
+| **Collections** | `http://localhost:5173/admin/collections` | Manage thematic series and series posters |
+| **Settings & Backups**| `http://localhost:5173/admin/settings` | Edit `site.json` metadata, WhatsApp number, and restore snapshots |
+| **Artwork Preview** | `http://localhost:5173/admin/preview/:slug` | Preview any poster (including drafts) with an admin banner |
 
-```typescript
-export const siteConfig = {
-  brandName: "LUMINA & ARCHIVE", // Replace with your brand name
-  tagline: "Fine Art Prints & Archival Poster Gallery",
-  whatsappNumber: "919876543210", // REPLACE WITH YOUR BUSINESS NUMBER (Country code + phone, no '+', spaces, or hyphens)
-  currency: "INR",
-  currencySymbol: "₹",
-  announcement: "Art for your walls. Inspiration for your everyday. Free framing on orders over ₹1,999.",
-  defaultEnquiryMessage: "Hi! I'd like to know more about your poster collection.",
-  contactEmail: "concierge@lumina-archive.art",
-  studioLocation: "Indiranagar, Bengaluru, India",
-  // ...
-};
-```
+---
 
-### 2. WhatsApp Enquiry Format
-When visitors click **Enquire on WhatsApp** from a poster card or detail page, a URL is dynamically generated:
-`https://wa.me/{whatsappNumber}?text={encoded_message}`
+## 🛠️ Architecture & Features
 
-Example generated message:
+### 1. Separation of Concerns
+- **Public Showcase**: Warm ivory (`#FAF8F5`), editorial typography (`Cormorant Garamond`), generous whitespace, lifestyle mockups, framing selector, and zero cart/checkout friction.
+- **Admin Console**: Professional, clean SaaS aesthetic (`#F4F6F8`, slate typography, crisp tables, restrained accents). Public visitors never see CMS controls or draft items.
+
+### 2. Local-Only Express Backend (`127.0.0.1:5001`)
+- Bound strictly to `127.0.0.1` (never exposed publicly).
+- Performs **atomic file writes** (`.tmp-` file swap) to prevent corruption.
+- Automatically saves a **snapshot backup** in `backups/` before any write operation.
+- Validates IDs, URL slugs, and pricing constraints (prevents sale price > regular price).
+- Handles local multipart image uploads to `public/images/posters/` via Multer.
+- Cleans up unused local images when a poster is deleted.
+- Enforces category deletion safety: prevents deleting a category if posters are assigned to it.
+
+### 3. Dynamic Public Reactivity with Bundled Fallback
+- The public showcase and admin share a React Context (`CatalogContext`).
+- On page load, the frontend fetches fresh data from `/api/*`. If the backend is ever stopped, the app seamlessly falls back to bundled JSON files (`products.json`, `categories.json`, `collections.json`, `site.json`).
+- Changes made in the Admin Dashboard reflect immediately in the public showcase without restarting the dev server or rebuilding.
+
+### 4. Promotional Discounts & Sale Pricing
+- Posters support optional promotional discounts (`type: "percentage"` or `type: "fixed"`).
+- Automatically calculates sale prices, savings amount, and percentage off.
+- The public cards and detail page display elegant discount badges, strike-through regular prices, and calculate exact savings in prefilled WhatsApp messages.
+
+### 5. Production Build Separation
+- **`npm run build`**: Standard build with the Admin Dashboard code-split into its own lazy chunk (`AdminApp-*.js`).
+- **`npm run build:public`**: Production build where the admin route, admin dashboard code, and backend services are **100% eliminated** via compiler dead-code elimination (`VITE_ENABLE_ADMIN=false`). Verified: no admin chunks exist in the public output!
+
+---
+
+## 📁 Key File Structure
+
 ```text
-Hi LUMINA & ARCHIVE! I'm interested in this poster:
-
-🖼️ Poster: Neo Tokyo: Cyberpunk Horizon
-🏷️ Product ID: POSTER-001
-📁 Category: Anime & Manga
-📐 Size: A3 (11.7 × 16.5 in)
-🖼️ Finish / Frame: Matte Black Solid Wood Frame
-💳 Listed Price: ₹799
-
-Could you please share details on availability, framing options, and estimated delivery?
+├── backups/                     # Automatic and manual JSON catalogue snapshot backups
+├── public/
+│   └── images/posters/          # Uploaded local poster images (managed by Multer)
+├── server/
+│   └── index.js                 # Local Express backend (127.0.0.1:5001)
+├── src/
+│   ├── components/
+│   │   ├── admin/               # Admin layout, sidebar, topbar, and upload fields
+│   │   ├── common/              # PosterCard, SearchModal, Breadcrumbs, FloatingWhatsApp
+│   │   ├── home/                # Hero, BestsellerSection, CuratedGrid, BrandStory
+│   │   └── layout/              # AnnouncementBar, Navbar, Footer
+│   ├── config/
+│   │   └── site.ts              # Global site configuration interface
+│   ├── context/
+│   │   └── CatalogContext.tsx   # Reactive state provider connecting API & fallback JSON
+│   ├── data/
+│   │   ├── products.json        # 26 pristine poster catalog records
+│   │   ├── categories.json      # 10 curated categories
+│   │   ├── collections.json     # 6 thematic series collections
+│   │   └── site.json            # Editable website settings (WhatsApp, brand, etc.)
+│   ├── pages/
+│   │   ├── admin/               # AdminDashboard, PostersList, Form, Drafts, Settings, etc.
+│   │   ├── HomePage.tsx
+│   │   ├── ExplorePage.tsx
+│   │   ├── CategoryPage.tsx
+│   │   ├── CollectionPage.tsx
+│   │   ├── PosterDetailPage.tsx
+│   │   ├── AboutPage.tsx
+│   │   └── ContactPage.tsx
+│   ├── services/
+│   │   └── api.ts               # Frontend API client with CRUD, uploads, and backups
+│   ├── types/
+│   │   └── index.ts             # TypeScript definitions
+│   ├── utils/
+│   │   └── whatsapp.ts          # wa.me link builders with discounts and live settings
+│   ├── App.tsx                  # Main router with public layout and lazy-loaded AdminApp
+│   └── main.tsx
+├── package.json
+└── vite.config.ts               # Vite proxy rules & mode-dependent admin exclusion
 ```
 
 ---
 
-## 🖼️ Poster Catalogue Management
-
-The entire product catalogue is decoupled and stored in:
-👉 `src/data/products.json`
-
-### Poster Record Schema:
-```json
-{
-  "id": "POSTER-001",
-  "slug": "neo-tokyo-cyberpunk-horizon",
-  "name": "Neo Tokyo: Cyberpunk Horizon",
-  "tagline": "Neon-soaked verticality and rain-slicked asphalt.",
-  "description": "A breathtaking artistic homage to cyberpunk anime aesthetics...",
-  "category": "Anime & Manga",
-  "categorySlug": "anime-manga",
-  "collection": "The Anime Edit",
-  "collectionSlug": "the-anime-edit",
-  "price": {
-    "A4": 499,
-    "A3": 799,
-    "A2": 1299,
-    "A1": 1999
-  },
-  "sizes": ["A4", "A3", "A2", "A1"],
-  "image": "https://images.unsplash.com/...",
-  "secondaryImage": "https://images.unsplash.com/...",
-  "mockupImages": {
-    "livingRoom": "https://images.unsplash.com/...",
-    "bedroom": "https://images.unsplash.com/...",
-    "studio": "https://images.unsplash.com/..."
-  },
-  "galleryImages": ["https://..."],
-  "featured": true,
-  "isNew": false,
-  "isBestseller": true,
-  "orientation": "portrait",
-  "tags": ["cyberpunk", "anime", "neon", "tokyo"],
-  "available": true,
-  "materials": "300 GSM Archival Cotton Rag, 12-colour Giclée pigment print",
-  "finish": "Velvety ultra-matte finish with anti-reflective coating",
-  "artistNote": "Inspired by the visual poetry of late 80s hand-drawn animation backgrounds."
-}
-```
-
-### Adding a New Poster:
-1. Open `src/data/products.json`.
-2. Add a new JSON object with a unique `id` (e.g. `POSTER-027`) and `slug`.
-3. Provide your high-resolution artwork URL and lifestyle mockup URL (or store image files in `public/posters/` and reference them as `/posters/my-art.jpg`).
-4. Save the file. The website immediately displays the new poster across the homepage, catalogue, and category views!
-
----
-
-## 🌐 Free GitHub Pages Deployment
-
-The application is pre-configured for automated GitHub Pages continuous deployment.
-
-### Step 1: Create a GitHub Repository
-```bash
-git init
-git add .
-git commit -m "feat: initial commit for premium poster showcase website"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-git push -u origin main
-```
-
-### Step 2: Enable GitHub Pages in Repository Settings
-1. Go to your GitHub repository in your browser.
-2. Click **Settings** > **Pages** (in the left sidebar).
-3. Under **Build and deployment** > **Source**, select **GitHub Actions**.
-
-### Step 3: Automatic Build & Deployment
-- The included workflow file `.github/workflows/deploy.yml` automatically triggers on every push to `main`.
-- It builds the application and deploys it to `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`.
-- `vite.config.ts` has `base: './'`, ensuring all assets resolve correctly regardless of subfolder path.
-- `HashRouter` is used to guarantee that direct links and page refreshes work seamlessly on GitHub Pages without 404 routing errors.
-
----
-
-## 🏗️ Future Admin & Publishing Architecture
-
-The catalogue is designed with a pure decoupled data model so that an administrative publishing workflow can be integrated in the future without refactoring presentation components.
-
-### Architectural Constraints:
-- **GitHub Pages is a static host**: It does not execute Node.js, Python, or database code on the server.
-- **Client-Side Security Rule**: A frontend React application must **never** store a GitHub Personal Access Token (PAT), as any user could extract the token from browser memory or network requests and gain write access to the repository.
-
-### Recommended Future Architecture:
-```
-+-------------------------------------------------------------+
-|                     Admin Dashboard                         |
-|   (Protected by authentication, e.g. NextAuth / Supabase)  |
-+------------------------------+------------------------------+
-                               |
-                               v (Authenticated API request)
-+-------------------------------------------------------------+
-|              Lightweight Serverless Backend                 |
-|        (Cloudflare Worker, Vercel Function, or Express)     |
-|         Holds GitHub App Private Key / Encrypted PAT        |
-+------------------------------+------------------------------+
-                               |
-                               v (GitHub Octokit API: repos.createOrUpdateFileContents)
-+-------------------------------------------------------------+
-|                     GitHub Repository                       |
-|         Commits updated src/data/products.json to main      |
-+------------------------------+------------------------------+
-                               |
-                               v (Triggers .github/workflows/deploy.yml)
-+-------------------------------------------------------------+
-|                   GitHub Actions & Pages                    |
-|             Automated rebuild & deploy in 60s               |
-+-------------------------------------------------------------+
-```
-
-1. **Phase 1 (Current)**: Manual catalogue editing via `src/data/products.json`.
-2. **Phase 2 (Future Admin)**: An administrative web interface authenticated via OAuth that allows non-technical team members to add posters, adjust prices, and toggle bestsellers. Changes are committed directly to the GitHub repository via secure server-side API, triggering automated site deployment.
-
----
-
-## 📄 License & Attribution
-
-Designed as an original, bespoke digital art print catalogue. All photography curated from the Unsplash open photography license for demonstrative and non-commercial presentation.
+## 🔒 Safety & Deployment Notice
+- **Local Testing Only**: This application is currently configured for local testing on your computer.
+- **GitHub Publishing is Disabled**: Do not push or deploy until you have completed your local testing and verification.
+- **Restoring Catalogue**: If you ever want to revert your catalogue data to a previous state, navigate to `http://localhost:5173/admin/settings` and click **Restore** next to any snapshot in the backups list.

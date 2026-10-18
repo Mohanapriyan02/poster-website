@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getBestsellerProducts } from "../../data/catalog";
+import { useCatalog } from "../../context/CatalogContext";
 import { PosterCard } from "../common/PosterCard";
 import { ArrowRight, Star } from "lucide-react";
 
 export const BestsellerSection: React.FC = () => {
+  const { getBestsellerProducts } = useCatalog();
   const bestsellers = getBestsellerProducts(4);
 
   return (

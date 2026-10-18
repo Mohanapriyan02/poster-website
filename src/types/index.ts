@@ -10,16 +10,30 @@ export interface PosterPrice {
   [key: string]: number | undefined;
 }
 
+export type PosterStatus = "published" | "draft";
+
+export interface PosterDiscount {
+  enabled: boolean;
+  type: "percentage" | "fixed";
+  value: number;
+  salePrice?: number;
+  startDate?: string;
+  endDate?: string;
+}
+
 export interface PosterProduct {
   id: string;
   slug: string;
   name: string;
   tagline?: string;
+  shortDescription?: string;
   description: string;
   category: string;
   categorySlug: string;
   collection: string;
   collectionSlug: string;
+  regularPrice?: number;
+  discount?: PosterDiscount;
   price?: PosterPrice;
   sizes: PosterSize[];
   image: string;
@@ -34,13 +48,17 @@ export interface PosterProduct {
   featured: boolean;
   isNew: boolean;
   isBestseller: boolean;
+  status?: PosterStatus;
   orientation: PosterOrientation;
   tags: string[];
   available: boolean;
   materials?: string;
   finish?: string;
   artistNote?: string;
+  displayOrder?: number;
+  lastModified?: string;
 }
+
 
 export interface Category {
   id: string;
@@ -50,6 +68,8 @@ export interface Category {
   image: string;
   accent: string;
   posterCount?: number;
+  hidden?: boolean;
+  displayOrder?: number;
 }
 
 export interface Collection {
@@ -60,7 +80,10 @@ export interface Collection {
   description: string;
   image: string;
   featuredProductSlugs?: string[];
+  hidden?: boolean;
+  displayOrder?: number;
 }
+
 
 export interface FilterState {
   search: string;

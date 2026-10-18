@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { siteConfig } from "../../config/site";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useCatalog } from "../../context/CatalogContext";
 import { Search, Menu, X, MessageCircle, ArrowRight } from "lucide-react";
 import { buildGeneralEnquiryUrl } from "../../utils/whatsapp";
 import { SearchModal } from "../common/SearchModal";
 
 export const Navbar: React.FC = () => {
+  const { settings } = useCatalog();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +34,33 @@ export const Navbar: React.FC = () => {
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
+
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("/#")) {
+      const sectionId = href.replace("/#", "");
+      if (location.pathname === "/") {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        navigate("/");
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 120);
+      }
+    } else {
+      if (location.pathname === href) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        navigate(href);
+        window.scrollTo(0, 0);
+      }
+    }
+  };
 
   return (
     <>
@@ -59,10 +88,10 @@ export const Navbar: React.FC = () => {
             {/* Brand Logo */}
             <Link to="/" className="flex flex-col items-center lg:items-start group">
               <span className="font-serif text-2xl sm:text-3xl font-normal tracking-wider text-[#171717] group-hover:text-[#8C7D70] transition-colors">
-                {siteConfig.brandName}
+                {settings.brandName}
               </span>
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#8C7D70] -mt-1 font-light">
-                Art Prints & Archive
+                {settings.tagline || "Art Prints & Archive"}
               </span>
             </Link>
 
@@ -75,45 +104,24 @@ export const Navbar: React.FC = () => {
                     ? location.pathname === "/"
                     : isAnchor
                     ? false
-                    : location.pathname.startsWith(link.href);
-
-                if (isAnchor) {
-                  return (
-                    <button
-                      key={link.label}
-                      type="button"
-                      onClick={() => {
-                        const id = link.href.replace("/#", "");
-                        if (location.pathname !== "/") {
-                          window.location.href = `#/${link.href.replace("/#", "")}`;
-                        } else {
-                          const el = document.getElementById(id);
-                          el?.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
-                      className="text-sm tracking-wide text-[#5C554E] hover:text-[#171717] transition-colors cursor-pointer bg-transparent border-none p-0"
-                    >
-                      {link.label}
-                    </button>
-                  );
-                }
+                    : location.pathname === link.href;
 
                 return (
-                  <Link
+                  <button
                     key={link.label}
-                    to={link.href}
-                    className={`text-sm tracking-wide transition-colors ${
+                    type="button"
+                    onClick={() => handleNavClick(link.href)}
+                    className={`text-sm tracking-wide transition-colors cursor-pointer bg-transparent border-none p-0 ${
                       isActive
                         ? "text-[#171717] font-semibold border-b border-[#171717] pb-1"
                         : "text-[#5C554E] hover:text-[#171717]"
                     }`}
                   >
                     {link.label}
-                  </Link>
+                  </button>
                 );
               })}
             </nav>
-
 
             {/* Actions: Search & WhatsApp Enquire CTA */}
             <div className="flex items-center space-x-3 sm:space-x-4">
@@ -127,7 +135,7 @@ export const Navbar: React.FC = () => {
               </button>
 
               <a
-                href={buildGeneralEnquiryUrl()}
+                href={buildGeneralEnquiryUrl(undefined, settings)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden sm:inline-flex items-center gap-2 bg-[#1C1A17] hover:bg-[#332E27] text-[#FAF8F5] px-4 py-2 text-xs uppercase tracking-widest font-medium transition-all duration-200 border border-transparent shadow-xs"
@@ -137,7 +145,7 @@ export const Navbar: React.FC = () => {
               </a>
 
               <a
-                href={buildGeneralEnquiryUrl()}
+                href={buildGeneralEnquiryUrl(undefined, settings)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="sm:hidden p-2 text-[#25D366] hover:text-[#1EBE5D] transition-colors"
@@ -165,7 +173,7 @@ export const Navbar: React.FC = () => {
               <div className="flex items-center justify-between pb-6 border-b border-[#EAE5DC]">
                 <Link to="/" onClick={() => setMobileMenuOpen(false)}>
                   <span className="font-serif text-2xl font-normal tracking-wide text-[#171717]">
-                    {siteConfig.brandName}
+                    {settings.brandName}
                   </span>
                 </Link>
                 <button
@@ -180,23 +188,18 @@ export const Navbar: React.FC = () => {
 
               <div className="mt-6 flex flex-col space-y-4">
                 {navLinks.map((link) => (
-                  <Link
+                  <button
                     key={link.label}
-                    to={link.href.startsWith("/#") ? "/" : link.href}
+                    type="button"
                     onClick={() => {
                       setMobileMenuOpen(false);
-                      if (link.href.startsWith("/#")) {
-                        setTimeout(() => {
-                          const el = document.getElementById(link.href.replace("/#", ""));
-                          el?.scrollIntoView({ behavior: "smooth" });
-                        }, 100);
-                      }
+                      handleNavClick(link.href);
                     }}
-                    className="text-base tracking-wide text-[#2B2724] hover:text-[#8C7D70] py-2 border-b border-[#EAE5DC]/40 flex items-center justify-between"
+                    className="text-base tracking-wide text-[#2B2724] hover:text-[#8C7D70] py-2 border-b border-[#EAE5DC]/40 flex items-center justify-between text-left cursor-pointer bg-transparent"
                   >
                     <span>{link.label}</span>
                     <ArrowRight className="w-4 h-4 text-[#8C7D70]" />
-                  </Link>
+                  </button>
                 ))}
               </div>
             </div>
@@ -204,7 +207,7 @@ export const Navbar: React.FC = () => {
             <div className="pt-6 border-t border-[#EAE5DC]">
               <p className="text-xs text-[#8C7D70] mb-3">Questions about sizing or framing?</p>
               <a
-                href={buildGeneralEnquiryUrl()}
+                href={buildGeneralEnquiryUrl(undefined, settings)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 bg-[#1C1A17] text-[#FAF8F5] py-3 text-xs uppercase tracking-widest font-medium"

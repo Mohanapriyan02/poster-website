@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowDown, Sparkles, MessageCircle, ArrowRight } from "lucide-react";
-import { buildGeneralEnquiryUrl } from "../../utils/whatsapp";
+import { ArrowDown, Sparkles, ArrowRight } from "lucide-react";
 
 export const Hero: React.FC = () => {
   const scrollToCollection = () => {
@@ -10,34 +9,34 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#FAF8F5] pt-6 pb-16 sm:pb-24 border-b border-[#EAE5DC]">
+    <section className="relative overflow-hidden bg-[#FAF8F5] pt-4 sm:pt-6 pb-12 sm:pb-24 border-b border-[#EAE5DC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Asymmetrical Editorial Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
           {/* Left Column: Editorial Headline & Copy */}
           <div className="lg:col-span-6 flex flex-col justify-center pr-0 lg:pr-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F2EDE4] border border-[#E2D8CC] text-[#8C7D70] text-xs uppercase tracking-widest font-medium w-fit mb-6">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-[#F2EDE4] border border-[#E2D8CC] text-[#8C7D70] text-[11px] sm:text-xs uppercase tracking-widest font-medium w-fit mb-4 sm:mb-6">
               <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
               <span>Artisan Wall Poster Showcase</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#171717] font-normal leading-[1.12] tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#171717] font-normal leading-[1.15] tracking-tight">
               Make Your Walls <br />
               <span className="italic font-normal font-serif text-[#786C5E]">
                 Feel Like You.
               </span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg text-[#5C554E] leading-relaxed max-w-xl font-light">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-lg text-[#5C554E] leading-relaxed max-w-xl font-light">
               Discover curated art prints and posters that bring your favourite worlds, cinematic moments, and thoughtful moods into your everyday sanctuary. Hand-printed on museum-grade cotton archival paper.
             </p>
 
             {/* CTAs */}
-            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={scrollToCollection}
-                className="inline-flex items-center justify-center gap-2.5 bg-[#1C1A17] hover:bg-[#332E27] text-[#FAF8F5] px-7 py-3.5 text-xs uppercase tracking-widest font-medium transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#1C1A17] hover:bg-[#332E27] text-[#FAF8F5] px-6 py-3.5 text-xs uppercase tracking-widest font-medium transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
               >
                 <span>Explore the Collection</span>
                 <ArrowDown className="w-3.5 h-3.5" />
@@ -45,7 +44,7 @@ export const Hero: React.FC = () => {
 
               <Link
                 to="/posters?filter=bestseller"
-                className="inline-flex items-center justify-center gap-2 border border-[#C5A880] hover:bg-[#F2EDE4] text-[#171717] px-6 py-3.5 text-xs uppercase tracking-widest font-medium transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-[#C5A880] hover:bg-[#F2EDE4] text-[#171717] px-6 py-3.5 text-xs uppercase tracking-widest font-medium transition-all duration-200"
               >
                 <span>Discover Best Sellers</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#8C7D70]" />
@@ -53,24 +52,24 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Micro Highlights */}
-            <div className="mt-12 pt-8 border-t border-[#EAE5DC] grid grid-cols-3 gap-4 text-center sm:text-left">
+            <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#EAE5DC] grid grid-cols-3 gap-2 sm:gap-4 text-center sm:text-left">
               <div>
-                <span className="block font-serif text-2xl font-normal text-[#171717]">300 GSM</span>
-                <span className="text-[11px] uppercase tracking-wider text-[#8C7D70]">Museum Cotton</span>
+                <span className="block font-serif text-xl sm:text-2xl font-normal text-[#171717]">300 GSM</span>
+                <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C7D70]">Museum Cotton</span>
               </div>
               <div>
-                <span className="block font-serif text-2xl font-normal text-[#171717]">100% Pigment</span>
-                <span className="text-[11px] uppercase tracking-wider text-[#8C7D70]">12-Color Giclée</span>
+                <span className="block font-serif text-xl sm:text-2xl font-normal text-[#171717]">100% Pigment</span>
+                <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C7D70]">12-Color Giclée</span>
               </div>
               <div>
-                <span className="block font-serif text-2xl font-normal text-[#171717]">WhatsApp</span>
-                <span className="text-[11px] uppercase tracking-wider text-[#8C7D70]">Direct Enquiries</span>
+                <span className="block font-serif text-xl sm:text-2xl font-normal text-[#171717]">WhatsApp</span>
+                <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[#8C7D70]">Direct Enquiries</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Hero Visual Showcase (Realistic Interior Wall Mockup) */}
-          <div className="lg:col-span-6 relative">
+          <div className="lg:col-span-6 relative mt-4 lg:mt-0">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               
               {/* Primary Interior Mockup Image */}
@@ -83,21 +82,21 @@ export const Hero: React.FC = () => {
                 />
 
                 {/* Subtle Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
                 {/* Floating Artwork Card in bottom corner */}
-                <div className="absolute bottom-5 left-5 right-5 sm:right-auto sm:max-w-xs bg-white/95 backdrop-blur-md p-4 border border-[#EAE5DC] shadow-lg">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-auto sm:max-w-xs bg-white/95 backdrop-blur-md p-3 sm:p-4 border border-[#EAE5DC] shadow-lg">
                   <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-[#8C7D70]">
                     <span>Featured Composition</span>
                     <span className="text-[#C5A880] font-semibold">In Focus</span>
                   </div>
-                  <h3 className="font-serif text-base font-normal text-[#171717] mt-1">
+                  <h3 className="font-serif text-sm sm:text-base font-normal text-[#171717] mt-0.5 sm:mt-1 line-clamp-1">
                     Neo Tokyo: Cyberpunk Horizon
                   </h3>
-                  <p className="text-[11px] text-[#7A7167] mt-0.5">
-                    Available in A4, A3, A2 & A1 with archival natural wood framing.
+                  <p className="text-[10px] sm:text-[11px] text-[#7A7167] mt-0.5 line-clamp-2 sm:line-clamp-none">
+                    Available in A4, A3, A2 &amp; A1 with archival natural wood framing.
                   </p>
-                  <div className="mt-3 flex items-center justify-between pt-2.5 border-t border-[#F2EDE4]">
+                  <div className="mt-2 sm:mt-3 flex items-center justify-between pt-2 border-t border-[#F2EDE4]">
                     <span className="text-xs font-medium text-[#171717]">From ₹499</span>
                     <Link
                       to="/poster/neo-tokyo-cyberpunk-horizon"

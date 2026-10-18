@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getProductBySlug, getRelatedProducts } from "../data/catalog";
+import { useCatalog } from "../context/CatalogContext";
 import { Breadcrumbs } from "../components/common/Breadcrumbs";
 import { PosterCard } from "../components/common/PosterCard";
-import { siteConfig } from "../config/site";
 import { buildPosterEnquiryUrl, SIZE_DIMENSIONS, FRAME_LABELS } from "../utils/whatsapp";
 import type { PosterSize, FrameStyle } from "../types";
 import {
@@ -21,6 +20,7 @@ import {
 
 export const PosterDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { getProductBySlug, getRelatedProducts, settings } = useCatalog();
   const poster = slug ? getProductBySlug(slug) : undefined;
 
   // Selected Size
@@ -81,7 +81,7 @@ export const PosterDetailPage: React.FC = () => {
       `Category: ${poster.category}`,
       `Selected Size: ${selectedSize} (${SIZE_DIMENSIONS[selectedSize]})`,
       `Frame Preference: ${FRAME_LABELS[frameStyle]}`,
-      `Price: ${currentPrice ? `${siteConfig.currencySymbol}${currentPrice}` : "On Request"}`,
+      `Price: ${currentPrice ? `${settings.currencySymbol}${currentPrice}` : "On Request"}`,
     ].join("\n");
 
     navigator.clipboard.writeText(text);
@@ -89,7 +89,7 @@ export const PosterDetailPage: React.FC = () => {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const enquiryUrl = buildPosterEnquiryUrl(poster, selectedSize, frameStyle);
+  const enquiryUrl = buildPosterEnquiryUrl(poster, selectedSize, frameStyle, settings);
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">
@@ -281,9 +281,23 @@ export const PosterDetailPage: React.FC = () => {
                 <span className="text-xs uppercase tracking-wider text-[#8C7D70] block">
                   Art Print Price
                 </span>
-                <span className="font-serif text-3xl text-[#171717] font-normal">
-                  {currentPrice ? `${siteConfig.currencySymbol}${currentPrice.toLocaleString()}` : "Price on Request"}
-                </span>
+                {poster.discount?.enabled && poster.discount.salePrice !== undefined && currentPrice && poster.discount.salePrice < currentPrice ? (
+                  <div className="flex items-baseline gap-2 flex-wrap">
+                    <span className="font-serif text-3xl text-[#C44536] font-normal">
+                      {settings.currencySymbol}{poster.discount.salePrice.toLocaleString()}
+                    </span>
+                    <span className="line-through text-sm text-[#8C7D70]">
+                      {settings.currencySymbol}{currentPrice.toLocaleString()}
+                    </span>
+                    <span className="bg-[#C44536]/10 text-[#C44536] text-[11px] font-semibold px-2 py-0.5 rounded-xs">
+                      {poster.discount.type === 'percentage' ? `${poster.discount.value}% OFF` : `Save ${settings.currencySymbol}${poster.discount.value}`}
+                    </span>
+                  </div>
+                ) : (
+                  <span className="font-serif text-3xl text-[#171717] font-normal">
+                    {currentPrice ? `${settings.currencySymbol}${currentPrice.toLocaleString()}` : "Price on Request"}
+                  </span>
+                )}
               </div>
               <div className="text-right">
                 <span className="text-[11px] text-[#25D366] font-medium bg-[#E8F8EE] px-2 py-0.5 border border-[#BCE8CA] inline-block">
@@ -294,6 +308,7 @@ export const PosterDetailPage: React.FC = () => {
                 </span>
               </div>
             </div>
+
 
             {/* Size Selector */}
             <div className="mt-6">
@@ -335,7 +350,7 @@ export const PosterDetailPage: React.FC = () => {
                       </span>
                       {price && (
                         <span className="block text-xs font-semibold text-[#171717] mt-1.5">
-                          {siteConfig.currencySymbol}{price.toLocaleString()}
+                          {settings.currencySymbol}{price.toLocaleString()}
                         </span>
                       )}
                     </button>
@@ -595,6 +610,40 @@ export const PosterDetailPage: React.FC = () => {
         </div>
       )}
 
+      {/* Mobile Sticky Bottom Action Bar */}
+      <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-[#EAE5DC] px-4 py-2.5 z-30 shadow-lg flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <span className="text-[10px] text-[#8C7D70] uppercase tracking-wider block font-medium truncate">
+            {selectedSize} · {frameStyle === 'unframed' ? 'Print' : 'Framed'}
+          </span>
+          <div className="flex items-baseline gap-1.5 flex-wrap">
+            {poster.discount?.enabled && poster.discount.salePrice !== undefined && currentPrice && poster.discount.salePrice < currentPrice ? (
+              <>
+                <span className="text-base font-bold text-[#C44536]">
+                  {settings.currencySymbol}{poster.discount.salePrice.toLocaleString()}
+                </span>
+                <span className="text-[11px] text-[#8C7D70] line-through">
+                  {settings.currencySymbol}{currentPrice.toLocaleString()}
+                </span>
+              </>
+            ) : (
+              <span className="text-base font-bold text-[#171717]">
+                {currentPrice ? `${settings.currencySymbol}${currentPrice.toLocaleString()}` : "Price on Request"}
+              </span>
+            )}
+          </div>
+        </div>
+
+        <a
+          href={enquiryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 max-w-[200px] flex items-center justify-center gap-1.5 bg-[#25D366] hover:bg-[#20BA5A] text-white py-2.5 px-3 rounded-xs text-xs uppercase tracking-wider font-bold shadow-xs transition-colors shrink-0"
+        >
+          <MessageCircle className="w-4 h-4 fill-white text-transparent shrink-0" />
+          <span>Enquire Now</span>
+        </a>
+      </div>
     </div>
   );
 };

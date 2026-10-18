@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Breadcrumbs } from "../components/common/Breadcrumbs";
-import { siteConfig } from "../config/site";
+import { useCatalog } from "../context/CatalogContext";
 import { Sparkles, Layers, ShieldCheck, HeartHandshake, MessageCircle, ArrowRight } from "lucide-react";
 import { buildGeneralEnquiryUrl } from "../utils/whatsapp";
 
 export const AboutPage: React.FC = () => {
+  const { settings } = useCatalog();
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">
       {/* Editorial Header */}
@@ -19,7 +20,7 @@ export const AboutPage: React.FC = () => {
             Art Built for Longevity & Thoughtful Spaces
           </h1>
           <p className="mt-6 text-base sm:text-lg text-[#5C554E] font-light leading-relaxed max-w-2xl mx-auto">
-            We started {siteConfig.brandName} with a singular belief: the posters on your wall should possess the same paper weight, tonal richness, and craftsmanship as pieces hanging in modern art galleries.
+            We started {settings.brandName} with a singular belief: the posters on your wall should possess the same paper weight, tonal richness, and craftsmanship as pieces hanging in modern art galleries.
           </p>
         </div>
       </div>

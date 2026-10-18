@@ -7,39 +7,59 @@ export const products: PosterProduct[] = productsData as PosterProduct[];
 export const categories: Category[] = categoriesData as Category[];
 export const collections: Collection[] = collectionsData as Collection[];
 
-export function getAllProducts(): PosterProduct[] {
-  return products.filter((p) => p.available);
+export function getAllProducts(includeDrafts = false): PosterProduct[] {
+  return products.filter((p) => (includeDrafts || p.status !== "draft") && p.available !== false);
 }
 
-export function getProductBySlug(slug: string): PosterProduct | undefined {
-  return products.find((p) => p.slug === slug);
+export function getProductBySlug(slug: string, includeDrafts = false): PosterProduct | undefined {
+  return products.find(
+    (p) =>
+      p.slug.toLowerCase() === slug.toLowerCase() &&
+      (includeDrafts || (p.status !== "draft" && p.available !== false))
+  );
 }
 
-export function getProductById(id: string): PosterProduct | undefined {
-  return products.find((p) => p.id === id);
+export function getProductById(id: string, includeDrafts = false): PosterProduct | undefined {
+  return products.find(
+    (p) =>
+      p.id.toLowerCase() === id.toLowerCase() &&
+      (includeDrafts || (p.status !== "draft" && p.available !== false))
+  );
 }
 
 export function getFeaturedProducts(limit = 8): PosterProduct[] {
-  return products.filter((p) => p.featured && p.available).slice(0, limit);
+  return products
+    .filter((p) => p.featured && p.available !== false && p.status !== "draft")
+    .slice(0, limit);
 }
 
 export function getBestsellerProducts(limit = 8): PosterProduct[] {
-  return products.filter((p) => p.isBestseller && p.available).slice(0, limit);
+  return products
+    .filter((p) => p.isBestseller && p.available !== false && p.status !== "draft")
+    .slice(0, limit);
 }
 
 export function getNewArrivals(limit = 8): PosterProduct[] {
-  return products.filter((p) => p.isNew && p.available).slice(0, limit);
+  return products
+    .filter((p) => p.isNew && p.available !== false && p.status !== "draft")
+    .slice(0, limit);
 }
 
 export function getProductsByCategory(categorySlug: string): PosterProduct[] {
   return products.filter(
-    (p) => p.categorySlug.toLowerCase() === categorySlug.toLowerCase() && p.available
+    (p) =>
+      p.categorySlug.toLowerCase() === categorySlug.toLowerCase() &&
+      p.available !== false &&
+      p.status !== "draft"
   );
 }
 
 export function getProductsByCollection(collectionSlug: string): PosterProduct[] {
   return products.filter(
-    (p) => p.collectionSlug.toLowerCase() === collectionSlug.toLowerCase() && p.available
+    (p) =>
+      p.collectionSlug.toLowerCase() === collectionSlug.toLowerCase() &&
+      p.available !== false &&
+      p.status !== "draft"
   );
 }
 
@@ -49,14 +69,22 @@ export function getRelatedProducts(
   limit = 4
 ): PosterProduct[] {
   return products
-    .filter((p) => p.slug !== currentSlug && p.categorySlug === categorySlug && p.available)
+    .filter(
+      (p) =>
+        p.slug !== currentSlug &&
+        p.categorySlug === categorySlug &&
+        p.available !== false &&
+        p.status !== "draft"
+    )
     .slice(0, limit);
 }
 
 export function getCategories(): Category[] {
   return categories.map((cat) => ({
     ...cat,
-    posterCount: products.filter((p) => p.categorySlug === cat.slug).length,
+    posterCount: products.filter(
+      (p) => p.categorySlug === cat.slug && p.available !== false && p.status !== "draft"
+    ).length,
   }));
 }
 
@@ -72,8 +100,11 @@ export function getCollectionBySlug(slug: string): Collection | undefined {
   return collections.find((c) => c.slug.toLowerCase() === slug.toLowerCase());
 }
 
-export function filterAndSortProducts(filters: FilterState): PosterProduct[] {
-  let list = getAllProducts();
+export function filterAndSortProducts(
+  filters: FilterState,
+  sourceProducts?: PosterProduct[]
+): PosterProduct[] {
+  let list = sourceProducts ? [...sourceProducts] : getAllProducts();
 
   // Search filter (name, tags, description, category)
   if (filters.search && filters.search.trim() !== "") {
@@ -107,15 +138,15 @@ export function filterAndSortProducts(filters: FilterState): PosterProduct[] {
   switch (filters.sortBy) {
     case "price-asc":
       list.sort((a, b) => {
-        const pa = a.price?.A3 || a.price?.A4 || 0;
-        const pb = b.price?.A3 || b.price?.A4 || 0;
+        const pa = a.price?.A3 || a.price?.A4 || a.regularPrice || 0;
+        const pb = b.price?.A3 || b.price?.A4 || b.regularPrice || 0;
         return pa - pb;
       });
       break;
     case "price-desc":
       list.sort((a, b) => {
-        const pa = a.price?.A3 || a.price?.A4 || 0;
-        const pb = b.price?.A3 || b.price?.A4 || 0;
+        const pa = a.price?.A3 || a.price?.A4 || a.regularPrice || 0;
+        const pb = b.price?.A3 || b.price?.A4 || b.regularPrice || 0;
         return pb - pa;
       });
       break;

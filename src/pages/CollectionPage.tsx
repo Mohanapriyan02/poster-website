@@ -1,15 +1,15 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { getCollectionBySlug, getProductsByCollection, getCollections } from "../data/catalog";
+import { useCatalog } from "../context/CatalogContext";
 import { PosterCard } from "../components/common/PosterCard";
 import { Breadcrumbs } from "../components/common/Breadcrumbs";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export const CollectionPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const collection = slug ? getCollectionBySlug(slug) : undefined;
+  const { collections: otherCollections, getProductsByCollection } = useCatalog();
+  const collection = slug ? otherCollections.find(c => c.slug.toLowerCase() === slug.toLowerCase()) : undefined;
   const posters = slug ? getProductsByCollection(slug) : [];
-  const otherCollections = getCollections();
 
   if (!collection) {
     return (
@@ -41,7 +41,7 @@ export const CollectionPage: React.FC = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
-              { label: "Collections", href: "/#collections" },
+              { label: "Explore Posters", href: "/posters" },
               { label: collection.name },
             ]}
           />

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, X, ArrowRight, Tag } from "lucide-react";
-import { getAllProducts, getCategories } from "../../data/catalog";
-import type { PosterProduct, Category } from "../../types";
+import { useCatalog } from "../../context/CatalogContext";
+import type { PosterProduct } from "../../types";
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -13,7 +13,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<PosterProduct[]>([]);
   const navigate = useNavigate();
-  const categories = getCategories();
+  const { publishedProducts, categories } = useCatalog();
 
   useEffect(() => {
     if (!isOpen) {
@@ -25,8 +25,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
   useEffect(() => {
     if (query.trim().length > 1) {
       const q = query.toLowerCase().trim();
-      const all = getAllProducts();
-      const matched = all.filter(
+      const matched = publishedProducts.filter(
         (p) =>
           p.name.toLowerCase().includes(q) ||
           p.category.toLowerCase().includes(q) ||
@@ -37,7 +36,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
     } else {
       setResults([]);
     }
-  }, [query]);
+  }, [query, publishedProducts]);
 
   if (!isOpen) return null;
 

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { siteConfig } from "../../config/site";
+import { useCatalog } from "../../context/CatalogContext";
 import { MessageCircle, X } from "lucide-react";
 import { buildGeneralEnquiryUrl } from "../../utils/whatsapp";
 
 export const AnnouncementBar: React.FC = () => {
   const [visible, setVisible] = useState(true);
+  const { settings } = useCatalog();
 
   if (!visible) return null;
 
@@ -13,10 +14,10 @@ export const AnnouncementBar: React.FC = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <div className="hidden sm:block w-6" /> {/* Spacer */}
         <div className="flex-1 text-center flex items-center justify-center gap-2">
-          <span>{siteConfig.announcement}</span>
+          <span>{settings.announcement}</span>
           <span className="hidden md:inline text-[#C5A880]">·</span>
           <a
-            href={buildGeneralEnquiryUrl("Hi! I would like to enquire about your poster catalogue.")}
+            href={buildGeneralEnquiryUrl("Hi! I would like to enquire about your poster catalogue.", settings)}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-1 text-[#C5A880] hover:text-[#E2D8CC] underline underline-offset-2 transition-colors"

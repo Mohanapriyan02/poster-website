@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getCollections } from "../../data/catalog";
+import { useCatalog } from "../../context/CatalogContext";
 import { ArrowUpRight } from "lucide-react";
 
 export const CuratedCollections: React.FC = () => {
-  const collections = getCollections();
+  const { collections } = useCatalog();
 
   return (
     <section id="collections" className="py-20 bg-[#FAF8F5] border-b border-[#EAE5DC]">

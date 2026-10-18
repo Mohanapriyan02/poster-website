@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getAllProducts, getCategories, getCollections } from "../data/catalog";
+import { useCatalog } from "../context/CatalogContext";
 import { PosterCard } from "../components/common/PosterCard";
 import { Breadcrumbs } from "../components/common/Breadcrumbs";
 import { Search, Filter, X, SlidersHorizontal, ArrowUpDown } from "lucide-react";
@@ -8,9 +8,7 @@ import type { FilterState, PosterOrientation } from "../types";
 
 export const ExplorePage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const allProducts = getAllProducts();
-  const categories = getCategories();
-  const collections = getCollections();
+  const { publishedProducts: allProducts, categories, collections } = useCatalog();
 
   const [filters, setFilters] = useState<FilterState>({
     search: searchParams.get("search") || "",
@@ -99,6 +97,8 @@ export const ExplorePage: React.FC = () => {
     setSearchParams({});
   };
 
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
+
   const hasActiveFilters =
     filters.search ||
     filters.category !== "all" ||
@@ -106,18 +106,25 @@ export const ExplorePage: React.FC = () => {
     filters.orientation !== "all" ||
     filters.sortBy !== "featured";
 
+  const activeFiltersCount = [
+    filters.category !== "all",
+    filters.collection !== "all",
+    filters.orientation !== "all",
+    filters.sortBy !== "featured",
+  ].filter(Boolean).length;
+
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">
       {/* Top Header */}
-      <div className="bg-[#F5F2EB] border-b border-[#EAE5DC] py-10 sm:py-14">
+      <div className="bg-[#F5F2EB] border-b border-[#EAE5DC] py-8 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: "Catalogue & Archive" }]} />
-          <div className="mt-3 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div className="mt-2 sm:mt-3 flex flex-col md:flex-row md:items-end justify-between gap-2 sm:gap-4">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#8C7D70]">
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#8C7D70]">
                 Curated Print Archive
               </span>
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#171717] font-normal mt-1">
+              <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-[#171717] font-normal mt-0.5 sm:mt-1">
                 Explore All Posters
               </h1>
             </div>
@@ -128,13 +135,12 @@ export const ExplorePage: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
         {/* Controls & Filter Bar */}
-        <div className="bg-white p-4 border border-[#EAE5DC] shadow-xs mb-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-center">
-            
-            {/* Search Input */}
-            <div className="lg:col-span-4 relative">
+        <div className="bg-white p-3.5 sm:p-4 border border-[#EAE5DC] shadow-xs mb-6 sm:mb-8">
+          {/* Search + Mobile Filter Toggle Button */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div className="flex-1 relative">
               <Search className="w-4 h-4 text-[#8C7D70] absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
@@ -153,12 +159,37 @@ export const ExplorePage: React.FC = () => {
               )}
             </div>
 
+            {/* Mobile Filter Toggle Button */}
+            <button
+              type="button"
+              onClick={() => setShowMobileFilters(!showMobileFilters)}
+              className="sm:hidden flex items-center justify-center gap-2 px-4 py-2.5 bg-[#FAF8F5] border border-[#EAE5DC] text-xs uppercase tracking-wider font-medium text-[#171717]"
+            >
+              <SlidersHorizontal className="w-3.5 h-3.5 text-[#8C7D70]" />
+              <span>{showMobileFilters ? "Hide Filters" : "Filter & Sort"}</span>
+              {activeFiltersCount > 0 && (
+                <span className="w-4 h-4 rounded-full bg-[#1C1A17] text-[#FAF8F5] text-[10px] flex items-center justify-center font-mono">
+                  {activeFiltersCount}
+                </span>
+              )}
+            </button>
+          </div>
+
+          {/* Filter Dropdowns: Desktop always visible, mobile toggleable */}
+          <div
+            className={`mt-3 pt-3 border-t border-[#F2EDE4] grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 ${
+              showMobileFilters ? "grid" : "hidden sm:grid"
+            }`}
+          >
             {/* Category Filter */}
-            <div className="lg:col-span-3">
+            <div>
+              <label className="sm:hidden text-[10px] uppercase tracking-wider text-[#8C7D70] block mb-1">
+                Category
+              </label>
               <select
                 value={filters.category}
                 onChange={(e) => setFilters({ ...filters, category: e.target.value })}
-                className="w-full bg-[#FAF8F5] border border-[#EAE5DC] text-xs py-2.5 px-3 text-[#171717] focus:outline-hidden focus:border-[#171717] cursor-pointer"
+                className="w-full bg-[#FAF8F5] border border-[#EAE5DC] text-xs py-2 px-2.5 text-[#171717] focus:outline-hidden focus:border-[#171717] cursor-pointer"
               >
                 <option value="all">All Categories ({allProducts.length})</option>
                 {categories.map((cat) => (
@@ -170,11 +201,14 @@ export const ExplorePage: React.FC = () => {
             </div>
 
             {/* Orientation Filter */}
-            <div className="lg:col-span-2">
+            <div>
+              <label className="sm:hidden text-[10px] uppercase tracking-wider text-[#8C7D70] block mb-1">
+                Orientation
+              </label>
               <select
                 value={filters.orientation}
                 onChange={(e) => setFilters({ ...filters, orientation: e.target.value })}
-                className="w-full bg-[#FAF8F5] border border-[#EAE5DC] text-xs py-2.5 px-3 text-[#171717] focus:outline-hidden focus:border-[#171717] cursor-pointer"
+                className="w-full bg-[#FAF8F5] border border-[#EAE5DC] text-xs py-2 px-2.5 text-[#171717] focus:outline-hidden focus:border-[#171717] cursor-pointer"
               >
                 <option value="all">All Orientations</option>
                 <option value="portrait">Portrait</option>
@@ -184,13 +218,16 @@ export const ExplorePage: React.FC = () => {
             </div>
 
             {/* Sort Filter */}
-            <div className="lg:col-span-3">
+            <div>
+              <label className="sm:hidden text-[10px] uppercase tracking-wider text-[#8C7D70] block mb-1">
+                Sort By
+              </label>
               <select
                 value={filters.sortBy}
                 onChange={(e) => setFilters({ ...filters, sortBy: e.target.value as any })}
-                className="w-full bg-[#FAF8F5] border border-[#EAE5DC] text-xs py-2.5 px-3 text-[#171717] focus:outline-hidden focus:border-[#171717] cursor-pointer"
+                className="w-full bg-[#FAF8F5] border border-[#EAE5DC] text-xs py-2 px-2.5 text-[#171717] focus:outline-hidden focus:border-[#171717] cursor-pointer"
               >
-                <option value="featured">Sort: Curated Featured</option>
+                <option value="featured">Sort: Featured</option>
                 <option value="bestseller">Sort: Most Loved Bestsellers</option>
                 <option value="newest">Sort: Newest Editions</option>
                 <option value="price-asc">Sort: Price (Low to High)</option>
@@ -198,7 +235,6 @@ export const ExplorePage: React.FC = () => {
                 <option value="name-asc">Sort: Alphabetical (A-Z)</option>
               </select>
             </div>
-
           </div>
 
           {/* Active Filter Chips */}

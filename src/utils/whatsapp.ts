@@ -1,4 +1,4 @@
-import { siteConfig } from "../config/site";
+import { siteConfig, type SiteConfig } from "../config/site";
 import type { PosterProduct, PosterSize, FrameStyle } from "../types";
 
 export const SIZE_DIMENSIONS: Record<PosterSize, string> = {
@@ -21,8 +21,11 @@ export const FRAME_LABELS: Record<FrameStyle, string> = {
 export function buildPosterEnquiryUrl(
   poster: PosterProduct,
   selectedSize?: PosterSize,
-  frameStyle?: FrameStyle
+  frameStyle?: FrameStyle,
+  overrideConfig?: Partial<SiteConfig>
 ): string {
+  const config = { ...siteConfig, ...overrideConfig };
+
   const sizeText = selectedSize
     ? `${selectedSize} (${SIZE_DIMENSIONS[selectedSize] || selectedSize})`
     : poster.sizes && poster.sizes.length > 0
@@ -30,18 +33,29 @@ export function buildPosterEnquiryUrl(
     : "Standard Size";
 
   const firstSize = poster.sizes?.[0];
-  const firstPrice = firstSize && poster.price ? poster.price[firstSize] : undefined;
-  const sizePrice = selectedSize && poster.price?.[selectedSize]
-    ? `${siteConfig.currencySymbol}${poster.price[selectedSize]?.toLocaleString()}`
+  const firstPrice = firstSize && poster.price ? poster.price[firstSize] : poster.regularPrice;
+  let sizePrice = selectedSize && poster.price?.[selectedSize]
+    ? `${config.currencySymbol}${poster.price[selectedSize]?.toLocaleString()}`
     : firstPrice
-    ? `From ${siteConfig.currencySymbol}${firstPrice.toLocaleString()}`
+    ? `From ${config.currencySymbol}${firstPrice.toLocaleString()}`
     : "Price on request";
 
+  // Check for active discount
+  if (poster.discount?.enabled && poster.discount.salePrice !== undefined) {
+    const reg = selectedSize && poster.price?.[selectedSize] ? poster.price[selectedSize] : (poster.regularPrice || firstPrice);
+    const sale = poster.discount.salePrice;
+    if (reg && sale < reg) {
+      const discountLabel = poster.discount.type === "percentage"
+        ? `${poster.discount.value}% OFF`
+        : `Save ${config.currencySymbol}${poster.discount.value}`;
+      sizePrice = `${config.currencySymbol}${sale.toLocaleString()} (Special Offer: ${discountLabel}, Regular: ${config.currencySymbol}${reg.toLocaleString()})`;
+    }
+  }
 
   const frameText = frameStyle ? FRAME_LABELS[frameStyle] : "Unframed Print";
 
   const lines = [
-    `Hi ${siteConfig.brandName}! I'm interested in this poster:`,
+    `Hi ${config.brandName}! I'm interested in this poster:`,
     ``,
     `🖼️ Poster: ${poster.name}`,
     `🏷️ Product ID: ${poster.id}`,
@@ -54,28 +68,33 @@ export function buildPosterEnquiryUrl(
   ];
 
   const message = lines.join("\n");
-  return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
 /**
  * Builds the official wa.me link for general inquiries.
  */
-export function buildGeneralEnquiryUrl(customMessage?: string): string {
-  const message = customMessage || siteConfig.defaultEnquiryMessage;
-  return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+export function buildGeneralEnquiryUrl(customMessage?: string, overrideConfig?: Partial<SiteConfig>): string {
+  const config = { ...siteConfig, ...overrideConfig };
+  const message = customMessage || config.defaultEnquiryMessage;
+  return `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
 /**
  * Builds custom artwork enquiry message
  */
-export function buildCustomPrintEnquiryUrl(details: {
-  name: string;
-  artType: string;
-  size: string;
-  notes?: string;
-}): string {
+export function buildCustomPrintEnquiryUrl(
+  details: {
+    name: string;
+    artType: string;
+    size: string;
+    notes?: string;
+  },
+  overrideConfig?: Partial<SiteConfig>
+): string {
+  const config = { ...siteConfig, ...overrideConfig };
   const lines = [
-    `Hi ${siteConfig.brandName}! I'd like to enquire about a custom art print:`,
+    `Hi ${config.brandName}! I'd like to enquire about a custom art print:`,
     ``,
     `👤 Name: ${details.name || "Collector"}`,
     `🎨 Art / Subject: ${details.artType}`,
@@ -85,5 +104,5 @@ export function buildCustomPrintEnquiryUrl(details: {
     `Could you guide me on requirements and pricing?`,
   ].filter(Boolean);
 
-  return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
+  return `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
 }

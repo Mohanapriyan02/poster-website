@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getCategories } from "../../data/catalog";
+import { useCatalog } from "../../context/CatalogContext";
 import { ArrowRight } from "lucide-react";
 
 export const FeaturedCategories: React.FC = () => {
-  const categories = getCategories();
+  const { categories } = useCatalog();
 
   return (
     <section id="categories" className="py-20 bg-[#FAF8F5] border-b border-[#EAE5DC]">
